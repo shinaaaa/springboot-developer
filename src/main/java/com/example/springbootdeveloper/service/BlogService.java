@@ -14,15 +14,19 @@ public class BlogService {
 
     private final BlogRepository blogRepository;
 
-    public Article save(AddArticleRequest request){
+    public Article save(AddArticleRequest request) {
         return blogRepository.save(request.toEntity());
     }
 
-    public List<Article> findAll(){
+    public List<Article> findAll() {
         return blogRepository.findAll();
     }
 
-    public Article findById(Long id){
+    public Article findById(Long id) {
         return blogRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("not found: " + id));
+    }
+
+    public void delete(Long id) {
+        blogRepository.deleteById(id);
     }
 }
