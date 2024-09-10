@@ -10,3 +10,6 @@ spring:
     defer-datasource-initialization: true
     hibernate:
       format_sql: true
+jwt:
+  issuer: shin029@gmail.com
+  secret_key: study-springboot
