@@ -14,6 +14,11 @@ public class UserService {
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
+    public User findById(Long userId) {
+        return userRepository.findById(userId)
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected user"));
+    }
+
     public Long save(AddUserRequest dto) {
         return userRepository.save(User.builder()
                 .email(dto.getEmail())
