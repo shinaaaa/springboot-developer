@@ -10,6 +10,16 @@ spring:
     defer-datasource-initialization: true
     hibernate:
       format_sql: true
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ""
+            client-secret: ""
+            scope:
+              - email
+              - profile
 jwt:
   issuer: shin029@gmail.com
   secret_key: study-springboot
